@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-card border-t border-white/5 py-12 mt-24">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Column 1 - About */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -35,19 +35,7 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Column 2 - Products */}
-          <div>
-            <h3 className="text-white font-medium mb-4">Products</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Exchange</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Institutional</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">API Documentation</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Mobile App</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Wallet</a></li>
-            </ul>
-          </div>
-          
-          {/* Column 3 - Company */}
+          {/* Column 2 - Company (previously Column 3) */}
           <div>
             <h3 className="text-white font-medium mb-4">Company</h3>
             <ul className="space-y-2 text-sm">
@@ -59,7 +47,7 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Column 4 - Newsletter */}
+          {/* Column 3 - Newsletter (previously Column 4) */}
           <div>
             <h3 className="text-white font-medium mb-4">Stay Updated</h3>
             <p className="text-gray-400 text-sm mb-4">
