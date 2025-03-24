@@ -4,17 +4,20 @@ import { getNewsApiKey, setNewsApiKey } from '@/services/newsApi';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
-import { AlertCircle } from 'lucide-react';
+import { AlertCircle, Info } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 
 const NewsApiKeyInput = () => {
   const [apiKey, setApiKey] = useState('');
   const [isKeySet, setIsKeySet] = useState(false);
+  const [isUsingDefault, setIsUsingDefault] = useState(false);
 
   useEffect(() => {
     const savedKey = getNewsApiKey();
     if (savedKey) {
       setIsKeySet(true);
+      // Check if we're using the default API key or a custom one
+      setIsUsingDefault(!localStorage.getItem('news_api_key'));
     }
   }, []);
 
@@ -28,6 +31,7 @@ const NewsApiKeyInput = () => {
 
     setNewsApiKey(apiKey);
     setIsKeySet(true);
+    setIsUsingDefault(false);
     toast.success("API key saved successfully");
     window.location.reload(); // Reload to fetch news with the new key
   };
@@ -35,20 +39,29 @@ const NewsApiKeyInput = () => {
   const handleReset = () => {
     localStorage.removeItem('news_api_key');
     setApiKey('');
-    setIsKeySet(false);
-    toast.info("API key removed");
+    setIsKeySet(true); // Still true because we'll fall back to the default key
+    setIsUsingDefault(true);
+    toast.info("Custom API key removed, using default key");
+    window.location.reload(); // Reload to fetch news with the default key
   };
 
   if (isKeySet) {
     return (
       <div className="mb-8 flex items-center justify-between glass-panel p-4 rounded-lg">
-        <p className="text-white">News API key is configured</p>
+        {isUsingDefault ? (
+          <div className="flex items-center">
+            <Info className="h-5 w-5 text-blue-400 mr-2" />
+            <p className="text-white">Using default News API key</p>
+          </div>
+        ) : (
+          <p className="text-white">Custom News API key is configured</p>
+        )}
         <Button 
           variant="destructive" 
           size="sm"
           onClick={handleReset}
         >
-          Reset API Key
+          {isUsingDefault ? "Use Custom Key" : "Reset API Key"}
         </Button>
       </div>
     );

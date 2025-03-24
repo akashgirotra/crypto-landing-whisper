@@ -14,9 +14,12 @@ export interface NewsItem {
   author?: string;
 }
 
-// Using localStorage to temporarily store the API key
+// Hard-coded API key (or you can set it via the UI)
+const DEFAULT_NEWS_API_KEY = "your-api-key-here";
+
+// Using localStorage to store the API key, with fallback to the default key
 export const getNewsApiKey = (): string | null => {
-  return localStorage.getItem('news_api_key');
+  return localStorage.getItem('news_api_key') || DEFAULT_NEWS_API_KEY;
 };
 
 export const setNewsApiKey = (apiKey: string): void => {
