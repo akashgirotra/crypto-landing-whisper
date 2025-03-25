@@ -13,7 +13,7 @@ type NewsletterCardProps = {
 };
 
 const NewsletterCard = ({ title, description, frequency, image, subscribers }: NewsletterCardProps) => (
-  <Card className="glass-card overflow-hidden h-full transition-all hover:translate-y-[-4px]">
+  <Card className="overflow-hidden h-full transition-all hover:translate-y-[-4px] border border-gray-200">
     <div className="h-40 overflow-hidden">
       <img 
         src={image}
@@ -23,18 +23,18 @@ const NewsletterCard = ({ title, description, frequency, image, subscribers }: N
     </div>
     <CardHeader className="pb-2">
       <div className="flex justify-between items-center mb-1">
-        <span className="text-xs font-medium bg-secondary/50 text-gray-300 px-3 py-1 rounded-full">
+        <span className="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
           {frequency}
         </span>
-        <span className="text-xs text-gray-400">
+        <span className="text-xs text-gray-500">
           {subscribers} subscribers
         </span>
       </div>
-      <CardTitle className="text-lg">{title}</CardTitle>
-      <CardDescription className="text-gray-400">{description}</CardDescription>
+      <CardTitle className="text-lg text-gray-800">{title}</CardTitle>
+      <CardDescription className="text-gray-600">{description}</CardDescription>
     </CardHeader>
     <CardFooter>
-      <Button variant="outline" className="w-full border-crypto-500 text-crypto-500 hover:bg-crypto-500 hover:text-white">
+      <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
         Subscribe <ArrowRight className="ml-2 h-4 w-4" />
       </Button>
     </CardFooter>
@@ -74,11 +74,11 @@ const NewsletterCards = () => {
   ];
 
   return (
-    <section className="py-12 px-4 md:py-16">
+    <section className="py-12 px-4 md:py-16 bg-gray-50">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Our Specialized Newsletters</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">Our Specialized Newsletters</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
             Choose from our collection of expert-curated newsletters tailored to different aspects of the crypto ecosystem
           </p>
         </div>
