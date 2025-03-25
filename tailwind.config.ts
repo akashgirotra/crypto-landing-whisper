@@ -30,18 +30,7 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))',
-					50: '#e6f9f4',
-					100: '#ccf3e9',
-					200: '#99e7d3',
-					300: '#66dbbd',
-					400: '#33cfa7',
-					500: '#00c391',
-					600: '#00b284',
-					700: '#009c74',
-					800: '#008664',
-					900: '#007054',
-					950: '#005a44',
+					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -73,12 +62,12 @@ export default {
 					200: '#cdddff',
 					300: '#a7bfff',
 					400: '#7c97ff',
-					500: '#00b284', // Changed to match Cricbuzz green
-					600: '#00a077', // Darker green shade
-					700: '#00895f', // Even darker
-					800: '#007050',
-					900: '#005a44',
-					950: '#003f30',
+					500: '#506cff',
+					600: '#3a3ff7',
+					700: '#2a2ce0',
+					800: '#2728b9',
+					900: '#262993',
+					950: '#171754',
 				}
 			},
 			borderRadius: {

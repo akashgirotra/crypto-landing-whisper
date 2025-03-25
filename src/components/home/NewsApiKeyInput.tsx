@@ -52,17 +52,17 @@ const NewsApiKeyInput = () => {
   if (isKeySet) {
     return (
       <div className="mb-8 flex flex-col space-y-4">
-        <div className="flex items-center justify-between bg-white p-4 rounded-md border border-gray-200 shadow-sm">
+        <div className="flex items-center justify-between glass-panel p-4 rounded-lg">
           {isUsingDefault ? (
             <div className="flex items-center">
-              <Info className="h-5 w-5 text-primary mr-2" />
-              <p className="text-gray-700">Using default News API key</p>
+              <Info className="h-5 w-5 text-blue-400 mr-2" />
+              <p className="text-white">Using default News API key</p>
             </div>
           ) : (
-            <p className="text-gray-700">Custom News API key is configured</p>
+            <p className="text-white">Custom News API key is configured</p>
           )}
           <Button 
-            variant={isUsingDefault ? "cricbuzz" : "destructive"} 
+            variant="destructive" 
             size="sm"
             onClick={handleReset}
           >
@@ -110,7 +110,7 @@ const NewsApiKeyInput = () => {
           onChange={(e) => setApiKey(e.target.value)}
           className="flex-grow"
         />
-        <Button type="submit" variant="cricbuzz">Save Key</Button>
+        <Button type="submit">Save Key</Button>
       </form>
     </div>
   );
